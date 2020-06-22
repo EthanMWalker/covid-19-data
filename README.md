@@ -202,13 +202,23 @@ On June 13, Louisiana reported an additional 560 backlogged cases from multiple 
 
 On June 16, Louisiana reported an additional 148 backlogged cases, the majority of which date back to mid-April.
 
+On June 19, Louisiana removed 1,666 duplicate and out of state cases from their total.
+
 * Massachusetts
 
 On April 24, Massachusetts reported the results of a large number of backlogged tests performed by Quest Diagnostics dating back to April 13, leading to a large one day jump in the number of total cases.
 
+* Mississippi
+
+Starting June 18, the Mississippi State Department of Health reports they have been experiencing technical difficulties that have limited their ability to update case and death counts.
+
 * Texas
 
 On June 16, Texas reported an additional 1,476 backlogged cases from prison inmates in Anderson and Brazoria counties.
+
+* Washington
+
+On June 17, Washington began removing from their totals deaths where Covid-19 was not a factor, for instance homicides, overdoses, suicides and car accidents. Four deaths from King County and three from Yakima county that were due to homicide, suicide or overdose were removed.
 
 #### Probable Cases and Deaths
 

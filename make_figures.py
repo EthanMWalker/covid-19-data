@@ -35,6 +35,16 @@ flo_mask = cnty_df.county == 'Floyd'
 jef_df = cnty_df[ken_mask & jef_mask]
 flo_df = cnty_df[ind_mask & flo_mask]
 
+ten_mask = cnty_df.state == 'Tennesee'
+knox_mask = cnty_df.county == 'Knox'
+davi_mask = cnty_df.county == 'Davidson'
+knox_df = cnty_df[ten_mask & knox_mask]
+david_df = cnty_df[ten_mask & davi_mask]
+
+oak_mask = cnty_df.county == 'Oklahoma' 
+oak_df = cnty_df[oak_mask]
+
+
 # utah county
 utah_cnty_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(utah_cnty_df.cases.values)])
 utah_cnty_df.loc[:,'roll'] = utah_cnty_df.new_cases.rolling(window=7).mean()
@@ -97,5 +107,26 @@ plt.clf()
 flo_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(flo_df.cases.values)])
 flo_df.loc[:,'roll'] = flo_df.new_cases.rolling(window=7).mean()
 flo_df.plot(x='date',y='roll',title='Floyd County Indiana 7 Day Rolling Average of Daily New Cases',legend=False)
+plt.savefig('visuals/floyd_county.pdf')
+plt.clf()
+
+# knox county
+knox_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(knox_df.cases.values)])
+knox_df.loc[:,'roll'] = knox_df.new_cases.rolling(window=7).mean()
+knox_df.plot(x='date',y='roll',title='Knox County Tennesee 7 Day Rolling Average of Daily New Cases',legend=False)
+plt.savefig('visuals/knox_county.pdf')
+plt.clf()
+
+# davidson county
+david_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(david_df.cases.values)])
+david_df.loc[:,'roll'] = david_df.new_cases.rolling(window=7).mean()
+david_df.plot(x='date',y='roll',title='Davidson County Tennesee 7 Day Rolling Average of Daily New Cases',legend=False)
+plt.savefig('visuals/floyd_county.pdf')
+plt.clf()
+
+# oklahoma county
+oak_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(oak_df.cases.values)])
+oak_df.loc[:,'roll'] = oak_df.new_cases.rolling(window=7).mean()
+oak_df.plot(x='date',y='roll',title='Oklahoma County 7 Day Rolling Average of Daily New Cases',legend=False)
 plt.savefig('visuals/floyd_county.pdf')
 plt.clf()

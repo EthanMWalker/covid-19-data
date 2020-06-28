@@ -81,3 +81,16 @@ washoe_df.plot(x='date',y='roll',title='Wahsoe County 7 Day Rolling Average')
 plt.savefig('visuals/washoe_county.pdf')
 plt.clf()
 
+# jefferson county
+jef_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(jef_df.cases.values)])
+jef_df.loc[:,'roll'] = jef_df.new_cases.rolling(window=7).mean()
+jef_df.plot(x='date',y='roll',title='Jefferson County Kentucky 7 Day Rolling Average of Daily New Cases',legend=False)
+plt.savefig('visuals/jefferson_county.pdf')
+plt.clf()
+
+# floyd county
+flo_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(flo_df.cases.values)])
+flo_df.loc[:,'roll'] = flo_df.new_cases.rolling(window=7).mean()
+flo_df.plot(x='date',y='roll',title='Floyd County Indiana 7 Day Rolling Average of Daily New Cases',legend=False)
+plt.savefig('visuals/floyd_county.pdf')
+plt.clf()

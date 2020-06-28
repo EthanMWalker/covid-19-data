@@ -9,3 +9,4 @@ git add --all
 git commit -m "updating figures"
 git push origin master
 
+./make_figures.py

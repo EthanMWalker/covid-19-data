@@ -44,6 +44,9 @@ david_df = cnty_df[ten_mask & davi_mask]
 oak_mask = cnty_df.county == 'Oklahoma' 
 oak_df = cnty_df[oak_mask]
 
+diego_mask = cnty_df.county == 'San Diego'
+diego_df = cnty_df[diego_mask]
+
 
 # utah county
 utah_cnty_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(utah_cnty_df.cases.values)])
@@ -129,4 +132,11 @@ oak_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(oak_df.cases.value
 oak_df.loc[:,'roll'] = oak_df.new_cases.rolling(window=7).mean()
 oak_df.plot(x='date',y='roll',title='Oklahoma County 7 Day Rolling Average of Daily New Cases',legend=False)
 plt.savefig('visuals/oklahoma_county.pdf')
+plt.clf()
+
+# san diego county
+diego_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(diego_df.cases.values)])
+diego_df.loc[:,'roll'] = diego_df.new_cases.rolling(window=7).mean()
+diego_df.plot(x='date',y='roll',title='San Diego County 7 Day Rolling Average of Daily New Cases',legend=False)
+plt.savefig('visuals/san_diego_county.pdf')
 plt.clf()

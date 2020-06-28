@@ -35,7 +35,7 @@ flo_mask = cnty_df.county == 'Floyd'
 jef_df = cnty_df[ken_mask & jef_mask]
 flo_df = cnty_df[ind_mask & flo_mask]
 
-ten_mask = cnty_df.state == 'Tennesee'
+ten_mask = cnty_df.state == 'Tennessee'
 knox_mask = cnty_df.county == 'Knox'
 davi_mask = cnty_df.county == 'Davidson'
 knox_df = cnty_df[ten_mask & knox_mask]

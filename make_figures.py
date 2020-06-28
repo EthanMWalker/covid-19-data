@@ -47,6 +47,9 @@ oak_df = cnty_df[oak_mask]
 diego_mask = cnty_df.county == 'San Diego'
 diego_df = cnty_df[diego_mask]
 
+wash_mask = cnty_df.state == 'Washington'
+king_mask = cnty_df.county == 'King'
+king_df = cnty_df[wash_mask & king_mask]
 
 # utah county
 utah_cnty_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(utah_cnty_df.cases.values)])
@@ -139,4 +142,11 @@ diego_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(diego_df.cases.v
 diego_df.loc[:,'roll'] = diego_df.new_cases.rolling(window=7).mean()
 diego_df.plot(x='date',y='roll',title='San Diego County 7 Day Rolling Average of Daily New Cases',legend=False)
 plt.savefig('visuals/san_diego_county.pdf')
+plt.clf()
+
+# king county
+king_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(king_df.cases.values)])
+king_df.loc[:,'roll'] = king_df.new_cases.rolling(window=7).mean()
+king_df.plot(x='date',y='roll',title='King County Washington 7 Day Rolling Average of Daily New Cases',legend=False)
+plt.savefig('visuals/king_county.pdf')
 plt.clf()

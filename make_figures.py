@@ -28,7 +28,12 @@ cali_mask = cnty_df.state == 'California'
 sc_df = cnty_df[sc_mask & cali_mask]
 cc_mask = cnty_df.county == 'Carson City'
 cc_df = cnty_df[cc_mask]
-
+ind_mask = cnty_df.state == 'Indiana'
+ken_mask = cnty_df.state == 'Kentucky'
+jef_mask = cnty_df.county == 'Jefferson'
+flo_mask = cnty_df.county == 'Floyd'
+jef_df = cnty_df[ken_mask & jef_mask]
+flo_df = cnty_df[ind_mask & flo_mask]
 
 # utah county
 utah_cnty_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(utah_cnty_df.cases.values)])

@@ -18,6 +18,7 @@ utah_cnty_mask = cnty_df.county == 'Utah'
 utah_cnty_df = cnty_df[utah_cnty_mask]
 salt_cnty_df = cnty_df[salt_lake_mask]
 utah_st_df = cnty_df[utah_mask]
+
 washoe_mask = cnty_df.county == 'Washoe'
 washoe_df = cnty_df[washoe_mask]
 douglas_mask = cnty_df.county == 'Douglas'
@@ -28,6 +29,7 @@ cali_mask = cnty_df.state == 'California'
 sc_df = cnty_df[sc_mask & cali_mask]
 cc_mask = cnty_df.county == 'Carson City'
 cc_df = cnty_df[cc_mask]
+
 ind_mask = cnty_df.state == 'Indiana'
 ken_mask = cnty_df.state == 'Kentucky'
 jef_mask = cnty_df.county == 'Jefferson'
@@ -50,6 +52,7 @@ diego_df = cnty_df[diego_mask]
 wash_mask = cnty_df.state == 'Washington'
 king_mask = cnty_df.county == 'King'
 king_df = cnty_df[wash_mask & king_mask]
+
 
 # utah county
 utah_cnty_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(utah_cnty_df.cases.values)])

@@ -57,8 +57,8 @@ king_df = cnty_df[wash_mask & king_mask]
 # utah county
 utah_cnty_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(utah_cnty_df.cases.values)])
 utah_cnty_df.loc[:,'roll'] = utah_cnty_df.new_cases.rolling(window=7).mean()
-utah_cnty_df.plot(x='date',y='roll',title='Utah County 7 Day Rolling Average')
-plt.savefig('visuals/utah_county.pdf')
+utah_cnty_df.plot(x='date',y='roll',title='Utah County 7 Day Rolling Average', legend=False)
+plt.savefig('visuals/utah_county')
 plt.clf()
 
 
@@ -69,87 +69,87 @@ utah_mask = state_df.state == 'Utah'
 utah_st_df = state_df[utah_mask]
 utah_st_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(utah_st_df.cases.values)])
 utah_st_df.loc[:,'roll'] = utah_st_df.new_cases.rolling(window=7).mean()
-utah_st_df.plot(x='date',y='roll',title='Utah State 7 Day Rolling Average')
-plt.savefig('visuals/utah_state.pdf')
+utah_st_df.plot(x='date',y='roll',title='Utah State 7 Day Rolling Average',legend=False)
+plt.savefig('visuals/utah_state')
 plt.clf()
 
 
 # santa cruz
 sc_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(sc_df.cases.values)])
 sc_df.loc[:,'roll'] = sc_df.new_cases.rolling(window=7).mean()
-sc_df.plot(x='date',y='roll',title='Santa Cruz County 7 Day Rolling Average')
-plt.savefig('visuals/santa_cruz_county.pdf')
+sc_df.plot(x='date',y='roll',title='Santa Cruz County 7 Day Rolling Average',legend=False)
+plt.savefig('visuals/santa_cruz_county')
 plt.clf()
 
 
 # carson city 
 cc_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(cc_df.cases.values)])
 cc_df.loc[:,'roll'] = cc_df.new_cases.rolling(window=7).mean()
-cc_df.plot(x='date',y='roll',title='Carson City County 7 Day Rolling Average')
-plt.savefig('visuals/carson_city_county.pdf')
+cc_df.plot(x='date',y='roll',title='Carson City County 7 Day Rolling Average',legend=False)
+plt.savefig('visuals/carson_city_county')
 plt.clf()
 
 
 # douglas county
 doug_cnty_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(doug_cnty_df.cases.values)])
 doug_cnty_df.loc[:,'roll'] = doug_cnty_df.new_cases.rolling(window=7).mean()
-doug_cnty_df.plot(x='date',y='roll',title='Douglas County 7 Day Rolling Average')
-plt.savefig('visuals/douglas_county.pdf')
+doug_cnty_df.plot(x='date',y='roll',title='Douglas County 7 Day Rolling Average',legend=False)
+plt.savefig('visuals/douglas_county')
 plt.clf()
 
 
 # washoe county
 washoe_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(washoe_df.cases.values)])
 washoe_df.loc[:,'roll'] = washoe_df.new_cases.rolling(window=7).mean()
-washoe_df.plot(x='date',y='roll',title='Wahsoe County 7 Day Rolling Average')
-plt.savefig('visuals/washoe_county.pdf')
+washoe_df.plot(x='date',y='roll',title='Wahsoe County 7 Day Rolling Average',legend=False)
+plt.savefig('visuals/washoe_county')
 plt.clf()
 
 # jefferson county
 jef_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(jef_df.cases.values)])
 jef_df.loc[:,'roll'] = jef_df.new_cases.rolling(window=7).mean()
 jef_df.plot(x='date',y='roll',title='Jefferson County Kentucky 7 Day Rolling Average of Daily New Cases',legend=False)
-plt.savefig('visuals/jefferson_county.pdf')
+plt.savefig('visuals/jefferson_county')
 plt.clf()
 
 # floyd county
 flo_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(flo_df.cases.values)])
 flo_df.loc[:,'roll'] = flo_df.new_cases.rolling(window=7).mean()
 flo_df.plot(x='date',y='roll',title='Floyd County Indiana 7 Day Rolling Average of Daily New Cases',legend=False)
-plt.savefig('visuals/floyd_county.pdf')
+plt.savefig('visuals/floyd_county')
 plt.clf()
 
 # knox county
 knox_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(knox_df.cases.values)])
 knox_df.loc[:,'roll'] = knox_df.new_cases.rolling(window=7).mean()
 knox_df.plot(x='date',y='roll',title='Knox County Tennesee 7 Day Rolling Average of Daily New Cases',legend=False)
-plt.savefig('visuals/knox_county.pdf')
+plt.savefig('visuals/knox_county')
 plt.clf()
 
 # davidson county
 david_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(david_df.cases.values)])
 david_df.loc[:,'roll'] = david_df.new_cases.rolling(window=7).mean()
 david_df.plot(x='date',y='roll',title='Davidson County Tennesee 7 Day Rolling Average of Daily New Cases',legend=False)
-plt.savefig('visuals/davidson_county.pdf')
+plt.savefig('visuals/davidson_county')
 plt.clf()
 
 # oklahoma county
 oak_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(oak_df.cases.values)])
 oak_df.loc[:,'roll'] = oak_df.new_cases.rolling(window=7).mean()
 oak_df.plot(x='date',y='roll',title='Oklahoma County 7 Day Rolling Average of Daily New Cases',legend=False)
-plt.savefig('visuals/oklahoma_county.pdf')
+plt.savefig('visuals/oklahoma_county')
 plt.clf()
 
 # san diego county
 diego_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(diego_df.cases.values)])
 diego_df.loc[:,'roll'] = diego_df.new_cases.rolling(window=7).mean()
 diego_df.plot(x='date',y='roll',title='San Diego County 7 Day Rolling Average of Daily New Cases',legend=False)
-plt.savefig('visuals/san_diego_county.pdf')
+plt.savefig('visuals/san_diego_county')
 plt.clf()
 
 # king county
 king_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(king_df.cases.values)])
 king_df.loc[:,'roll'] = king_df.new_cases.rolling(window=7).mean()
 king_df.plot(x='date',y='roll',title='King County Washington 7 Day Rolling Average of Daily New Cases',legend=False)
-plt.savefig('visuals/king_county.pdf')
+plt.savefig('visuals/king_county')
 plt.clf()

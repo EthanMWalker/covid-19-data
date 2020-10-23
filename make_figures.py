@@ -53,6 +53,13 @@ wash_mask = cnty_df.state == 'Washington'
 king_mask = cnty_df.county == 'King'
 king_df = cnty_df[wash_mask & king_mask]
 
+tex_mask = cnty_df.state == 'Texas'
+guad_mask = cnty_df.county == 'Guadalupe'
+guad_df = cnty_df[tex_mask & guad_mask]
+
+san_mask = cnty_df.county == 'San Antonio'
+san_df = cnty_df[tex_mask & guad_mask]
+
 
 # utah county
 utah_cnty_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(utah_cnty_df.cases.values)])
@@ -153,3 +160,27 @@ king_df.loc[:,'roll'] = king_df.new_cases.rolling(window=7).mean()
 king_df.plot(x='date',y='roll',title='King County Washington 7 Day Rolling Average of Daily New Cases',legend=False)
 plt.savefig('visuals/king_county')
 plt.clf()
+
+# guadalupe county
+guad_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(guad_df.cases.values)])
+guad_df.loc[:,'roll'] = guad_df.new_cases.rolling(window=7).mean()
+guad_df.plot(x='date',y='roll',title='Guadalupe County Texas 7 Day Rolling Average of Daily New Cases',legend=False)
+plt.savefig('visuals/guadalupe_county')
+plt.clf()
+
+# san antonio county
+san_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(san_df.cases.values)])
+san_df.loc[:,'roll'] = san_df.new_cases.rolling(window=7).mean()
+san_df.plot(x='date',y='roll',title='San Antonio County Texas 7 Day Rolling Average of Daily New Cases',legend=False)
+plt.savefig('visuals/san_antonio_county')
+plt.clf()
+
+# Texas county
+texas_mask = state_df.state == 'Texas'
+texas_st_df = state_df[texas_mask]
+texas_st_df.loc[:,'new_cases'] = np.hstack([np.array([0]), np.diff(texas_st_df.cases.values)])
+texas_st_df.loc[:,'roll'] = texas_st_df.new_cases.rolling(window=7).mean()
+texas_st_df.plot(x='date',y='roll',title='Texas State 7 Day Rolling Average',legend=False)
+plt.savefig('visuals/texas_state')
+plt.clf()
+
